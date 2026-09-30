@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  BananaPi F3 (SpacemiT K1) / BPI-SM10 (K3) Android 16 changes, branch android16-riscv.
+  Replace fardiahmed with the account the android16-riscv branches are pushed to.
+  vendor/spacemit is only a directory: every component under it is a project of its own.
+-->
+<manifest>
+  <remote name="github" fetch="git@github.com:fardiahmed/" revision="android16-riscv" />
+
+  <!-- AOSP projects with changes (forks named android_<path>) -->
+  <remove-project name="platform/bootable/recovery" />
+  <project path="bootable/recovery" name="android_bootable_recovery" remote="github" groups="pdk" />
+  <remove-project name="platform/external/crosvm" />
+  <project path="external/crosvm" name="android_external_crosvm" remote="github" groups="pdk" />
+  <remove-project name="platform/external/v4l2_codec2" />
+  <project path="external/v4l2_codec2" name="android_external_v4l2_codec2" remote="github" groups="pdk" />
+  <remove-project name="platform/external/zlib" />
+  <project path="external/zlib" name="android_external_zlib" remote="github" groups="pdk" />
+  <remove-project name="platform/packages/modules/Virtualization" />
+  <project path="packages/modules/Virtualization" name="android_packages_modules_Virtualization" remote="github" groups="pdk" />
+
+  <!-- BayLibre projects with changes (forks keep the BayLibre names) -->
+  <extend-project name="android_external_minigbm" remote="github" revision="android16-riscv" />
+  <extend-project name="android_hardware_baylibre_audio" remote="github" revision="android16-riscv" />
+  <extend-project name="android_hardware_baylibre_usb" remote="github" revision="android16-riscv" />
+  <extend-project name="android_device_spacemit_common" remote="github" revision="android16-riscv" />
+  <extend-project name="android_device_spacemit_k1" remote="github" revision="android16-riscv" />
+
+  <!-- New device project: BananaPi BPI-SM10 (K3) -->
+  <project path="device/spacemit/k3" name="android_device_spacemit_k3" remote="github" groups="device,pdk" />
+
+  <!-- Kernel prebuilts are built from source by ./build.sh (spacemit-sources.xml) -->
+  <remove-project name="android_device_spacemit_k1_kernel" />
+
+  <!-- vendor/spacemit: one project per component (replaces android_vendor_spacemit);
+       {k1,musepi-pro}/bootloader are built by ./build.sh -->
+  <remove-project name="android_vendor_spacemit" />
+  <project path="vendor/spacemit/k1" name="android_vendor_spacemit_k1" remote="github" groups="device,pdk" />
+  <project path="vendor/spacemit/hardware/codec2" name="android_vendor_spacemit_hardware_codec2" remote="github" groups="device,pdk" />
+  <project path="vendor/spacemit/hardware/hdmi" name="android_vendor_spacemit_hardware_hdmi" remote="github" groups="device,pdk" />
+  <project path="vendor/spacemit/hardware/mesa" name="android_vendor_spacemit_hardware_mesa" remote="github" groups="device,pdk" />
+  <project path="vendor/spacemit/hardware/recovery" name="android_vendor_spacemit_hardware_recovery" remote="github" groups="device,pdk" />
+  <project path="vendor/spacemit/hardware/sensors" name="android_vendor_spacemit_hardware_sensors" remote="github" groups="device,pdk" />
+  <project path="vendor/spacemit/hardware/wifi" name="android_vendor_spacemit_hardware_wifi" remote="github" groups="device,pdk" />
+  <project path="vendor/spacemit/apps/AiChat" name="android_vendor_spacemit_apps_AiChat" remote="github" groups="device,pdk" />
+  <project path="vendor/spacemit/apps/MicTest" name="android_vendor_spacemit_apps_MicTest" remote="github" groups="device,pdk" />
+  <project path="vendor/spacemit/apps/WfdSink" name="android_vendor_spacemit_apps_WfdSink" remote="github" groups="device,pdk" />
+  <project path="vendor/spacemit/apps/ExoPlayer" name="android_vendor_spacemit_apps_ExoPlayer" remote="github" groups="device,pdk" />
+  <!-- src/ is a submodule on ggml-org/llama.cpp -->
+  <project path="vendor/spacemit/ai/llama" name="android_vendor_spacemit_ai_llama" remote="github" sync-s="true" groups="device,pdk" />
+</manifest>

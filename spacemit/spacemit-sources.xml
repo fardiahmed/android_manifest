@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Kernel (Kleaf) and bootloader sources, built by ./build.sh (device/spacemit/common/build).
+  kernel/spacemit is BayLibre's kernel.xml with every path under kernel/spacemit: its pinned
+  prebuilts and externals must not replace the Android ones. Remote "github": android16-riscv.xml.
+-->
+<manifest>
+  <!-- kernel.xml, under kernel/spacemit -->
+  <project path="kernel/spacemit/build/kernel" name="kernel/build" remote="aosp" revision="3fef046c400fb14eb5d8f93a02e844792608a295" groups="ddk">
+    <linkfile src="kleaf/bazel.sh" dest="kernel/spacemit/tools/bazel" />
+    <linkfile src="kleaf/bzlmod/bazel.MODULE.bazel" dest="kernel/spacemit/MODULE.bazel" />
+  </project>
+  <project path="kernel/spacemit/common" name="android_kernel_common" remote="github" revision="android16-riscv" />
+  <project path="kernel/spacemit/common-modules/trusty" name="kernel/common-modules/trusty" remote="aosp" revision="e3435aae8aa3ecc20e4cad34f5f68582554bdbb2" />
+  <project path="kernel/spacemit/common-modules/virtio-media" name="platform/external/virtio-media" remote="aosp" revision="8adc89d5112ff5bf64d4ad2f8d7714f42762849f" />
+  <project path="kernel/spacemit/common-modules/virtual-device" name="kernel/common-modules/virtual-device" remote="aosp" revision="d8832fb642e60948ed392e65b8e2d7071b88d9e2" />
+  <project path="kernel/spacemit/prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" remote="aosp" revision="7dd8ae54050f3c80464507c7a28fe5c4495e83a2" groups="ddk" clone-depth="1" />
+  <project path="kernel/spacemit/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" remote="aosp" revision="e94c88168b46019d650d472d5ebb4788f233c881" groups="ddk" clone-depth="1" />
+  <project path="kernel/spacemit/prebuilts/build-tools" name="platform/prebuilts/build-tools" remote="aosp" revision="432ba4222258c1955c0ebce1901579e56ca8ce9e" groups="ddk" clone-depth="1" />
+  <project path="kernel/spacemit/prebuilts/clang-tools" name="platform/prebuilts/clang-tools" remote="aosp" revision="6e58596cc0209a4d81625732c369f66f668bec21" groups="ddk" clone-depth="1" />
+  <project path="kernel/spacemit/prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" remote="aosp" revision="922ca6cbdf1d62a5456c0836da420c0f9bc04032" groups="ddk" clone-depth="1" />
+  <project path="kernel/spacemit/prebuilts/rust-toolchain/linux-x86" name="platform/prebuilts/rust-toolchain/linux-x86" remote="aosp" revision="264d7e00bdb78f2cbe3dd4c2dd67d64c13b298e3" groups="ddk" />
+  <project path="kernel/spacemit/prebuilts/ndk-r27" name="toolchain/prebuilts/ndk/r27" remote="aosp" revision="c1f08c69904869adc0759667e0ffa683d57025fa" groups="ddk" clone-depth="1" />
+  <project path="kernel/spacemit/kernel/tests" name="kernel/tests" remote="aosp" revision="47aedf1c4a1e492768a15e319664f3a7a32eec46" />
+  <project path="kernel/spacemit/prebuilts/tradefed" name="platform/tools/tradefederation/prebuilts" remote="aosp" revision="6958451f8a2f996664bdfc704518c49351127423" clone-depth="1" />
+  <project path="kernel/spacemit/prebuilts/asuite" name="platform/prebuilts/asuite" remote="aosp" revision="3b72444078c2a72b1d660ab791fc8a3c26efd08a" clone-depth="1" />
+  <project path="kernel/spacemit/prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" remote="aosp" revision="b43dc974b874d58e939c51c774276d3ed173e4e1" clone-depth="1" />
+  <project path="kernel/spacemit/external/libcap-ng" name="platform/external/libcap-ng" remote="aosp" revision="904a9aad9b72293c8108a3328056283d85b2b806" />
+  <project path="kernel/spacemit/external/libcap" name="platform/external/libcap" remote="aosp" revision="fd6a1ee084166d2f584743c8bc0a8f29de5ba0c7" />
+  <project path="kernel/spacemit/test/dittosuite" name="platform/test/dittosuite" remote="aosp" revision="64f0592b7df50e3532119a78b3608358adef92c8" />
+  <project path="kernel/spacemit/test/ltp" name="platform/external/ltp" remote="aosp" revision="eb582c8e4e53c6c3f1f17ecd2eb712021ff673d9" />
+  <project path="kernel/spacemit/external/bazel-contrib-bazel_features" name="platform/external/bazel-contrib-bazel_features" remote="aosp" revision="6b445cbe6af9b3b7dcd589cb8d28d2f401143ae6" groups="ddk-external" />
+  <project path="kernel/spacemit/external/bazel-contrib-rules_devicetree" name="platform/external/bazel-contrib-rules_devicetree" remote="aosp" revision="bc0509e0ae6195f9a47764c3d846459f713fa741" groups="ddk-external" />
+  <project path="kernel/spacemit/external/bazel-contrib-supply-chain" name="platform/external/bazel-contrib-supply-chain" remote="aosp" revision="d272ef31b0c4f743fdc5fe7a211ddf47816585e8" groups="ddk-external" />
+  <project path="kernel/spacemit/external/bazel-skylib" name="platform/external/bazel-skylib" remote="aosp" revision="5b1ebf307a37c3cd369e2bcf2f5b7e9cbfb79b36" groups="ddk-external" />
+  <project path="kernel/spacemit/external/bazelbuild-bazel-central-registry" name="platform/external/bazelbuild-bazel-central-registry" remote="aosp" revision="ba06df44c963774fedaca97f59c9f5f6d7d4524e" groups="ddk-external" />
+  <project path="kernel/spacemit/external/bazelbuild-platforms" name="platform/external/bazelbuild-platforms" remote="aosp" revision="41b8b91d2eab15a3573b740358dd4b1b3f7d5097" groups="ddk-external" />
+  <project path="kernel/spacemit/external/bazelbuild-rules_cc" name="platform/external/bazelbuild-rules_cc" remote="aosp" revision="c4e256680710e65f1305b8ded16e5394a0572dca" groups="ddk-external" />
+  <project path="kernel/spacemit/external/bazelbuild-rules_license" name="platform/external/bazelbuild-rules_license" remote="aosp" revision="8252dd056e1381eb60300c4158522318eb2eaafd" groups="ddk-external" />
+  <project path="kernel/spacemit/external/bazelbuild-rules_pkg" name="platform/external/bazelbuild-rules_pkg" remote="aosp" revision="d7c6270a04f291875abac6fd218575b2a45ba09d" groups="ddk-external" />
+  <project path="kernel/spacemit/external/bazelbuild-rules_python" name="platform/external/bazelbuild-rules_python" remote="aosp" revision="571592f347f363a88facb851536befcbf6f73700" groups="ddk-external" />
+  <project path="kernel/spacemit/external/bazelbuild-rules_rust" name="platform/external/bazelbuild-rules_rust" remote="aosp" revision="5975ad7ee75212b585f75da60444fcc4a43ff5f3" groups="ddk-external" />
+  <project path="kernel/spacemit/external/bazelbuild-rules_shell" name="platform/external/bazelbuild-rules_shell" remote="aosp" revision="32f339bedfd8d37f33d4f0790fbad66b9829dbc9" groups="ddk-external" />
+  <project path="kernel/spacemit/external/python/absl-py" name="platform/external/python/absl-py" remote="aosp" revision="5b421cafc7c99c63c8c5221f6d256dde1c27087b" groups="ddk-external" />
+  <project path="kernel/spacemit/external/avb" name="platform/external/avb" remote="aosp" revision="a06971682bd7a1ee8048a57fc0a0df04353cf66b" groups="ddk" />
+  <project path="kernel/spacemit/external/dtc" name="platform/external/dtc" remote="aosp" revision="6ab7e35a241f6b1513c4701c66fe479ab040eafb" groups="ddk" />
+  <project path="kernel/spacemit/external/kmod" name="platform/external/kmod" remote="aosp" revision="dda7839f3e2d13e1cc241e2fee020452552f88d2" groups="ddk" />
+  <project path="kernel/spacemit/external/lz4" name="platform/external/lz4" remote="aosp" revision="6fa8b6928ae968ef70ea1d7b8a94b6fc4ed638a5" groups="ddk" />
+  <project path="kernel/spacemit/external/pigz" name="platform/external/pigz" remote="aosp" revision="9bc9fa17d499ddde88b77820f6d063e16c0cdd42" groups="ddk" />
+  <project path="kernel/spacemit/external/toybox" name="platform/external/toybox" remote="aosp" revision="ed5ec23e8e2afac79d0766ccf62c5493e9c0d26b" groups="ddk" />
+  <project path="kernel/spacemit/external/zlib" name="platform/external/zlib" remote="aosp" revision="31a8642cef0d06c1344ee7c30140e50f605b73de" groups="ddk" />
+  <project path="kernel/spacemit/external/zopfli" name="platform/external/zopfli" remote="aosp" revision="feec88f5d5e2b9ab0c0c3ae1e4ed543f105426aa" groups="ddk" />
+  <project path="kernel/spacemit/external/zstd" name="platform/external/zstd" remote="aosp" revision="2fcd8f4e875795fbf98c85281f5df980c8c00097" groups="ddk" />
+  <project path="kernel/spacemit/bootable/libbootloader" name="platform/bootable/libbootloader" remote="aosp" revision="938a447b906cf5fc24e40ae9b94623dc790839c7" />
+  <project path="kernel/spacemit/external/arm-trusted-firmware" name="platform/external/arm-trusted-firmware" remote="aosp" revision="7abe08e9858c2c028870ac4dace6109be71542a3" />
+  <project path="kernel/spacemit/external/boringssl" name="platform/external/boringssl" remote="aosp" revision="f531ba1ba7b5cfbebc4e72d71254d0fbdd5fa6c5" />
+  <project path="kernel/spacemit/external/compiler-rt" name="platform/external/compiler-rt" remote="aosp" revision="fca7d4641819e50d89374a1dadb615bd8991ebf4" />
+  <project path="kernel/spacemit/external/libufdt" name="platform/system/libufdt" remote="aosp" revision="48b5b39cd8fafc56b82bdfe19eee0c43234fe146" />
+  <project path="kernel/spacemit/external/open-dice" name="platform/external/open-dice" remote="aosp" revision="2d8d77740e00c73ec536ebfe5658d8f56b1f5bfe" />
+  <project path="kernel/spacemit/external/elfutils" name="platform/external/elfutils" remote="aosp" revision="05a8bfdceb8418560662a8c83b1d8997ca8c0299" />
+  <project path="kernel/spacemit/external/googletest" name="platform/external/googletest" remote="aosp" revision="db9a5a6d0478a3fbe75be41782232595f8f6e041" />
+  <project path="kernel/spacemit/external/rust/android-crates-io" name="platform/external/rust/android-crates-io" remote="aosp" revision="7f632f50166d6ecebb36381e16bfb03533f3dbf0" />
+  <project path="kernel/spacemit/external/rust/crates/smoltcp" name="platform/external/rust/crates/smoltcp" remote="aosp" revision="22ce981acab277a6809f53856ee2733d282bea31" />
+  <project path="kernel/spacemit/external/rust/crates/zune-inflate" name="platform/external/rust/crates/zune-inflate" remote="aosp" revision="9a1191933a795a8aedd67e358a9df492d36345d5" />
+  <project path="kernel/spacemit/prebuilts/fuchsia_sdk" name="platform/prebuilts/fuchsia_sdk" remote="aosp" revision="35c2e878b0c3af33eb7bf769c9f8ecebc54e26ef" clone-depth="1" />
+  <project path="kernel/spacemit/devices/spacemit" name="android_kernel_device_spacemit" remote="github" revision="android16-riscv">
+    <linkfile src="bananapi_f3/device.bazelrc" dest="kernel/spacemit/device.bazelrc" />
+  </project>
+
+  <!-- bootloader.xml, under bootloader/spacemit -->
+  <project path="bootloader/spacemit/build-bootloaders" name="android_bootloader_build" remote="github" revision="android16-riscv" />
+  <project path="bootloader/spacemit/pi-u-boot" name="pi-u-boot" remote="github" revision="android16-riscv" />
+  <project path="bootloader/spacemit/pi-opensbi" name="pi-opensbi" remote="baydroid" revision="v1.3-k1" />
+
+  <!-- ./build.sh at the top, and keep Soong out of the kernel/bootloader workspaces -->
+  <extend-project name="android_device_spacemit_common">
+    <linkfile src="build/build.sh" dest="build.sh" />
+    <linkfile src="build/find-ignore" dest="kernel/spacemit/.find-ignore" />
+    <linkfile src="build/find-ignore" dest="bootloader/spacemit/.find-ignore" />
+  </extend-project>
+</manifest>

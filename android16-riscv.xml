@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BayLibre's default.xml + the android16-riscv forks and in-tree kernel/bootloader sources. -->
+<manifest>
+  <include name="default.xml" />
+  <include name="spacemit/android16-riscv.xml" />
+  <include name="spacemit/spacemit-sources.xml" />
+</manifest>

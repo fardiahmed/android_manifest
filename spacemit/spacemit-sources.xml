@@ -70,7 +70,8 @@
   <!-- bootloader.xml, under bootloader/spacemit -->
   <project path="bootloader/spacemit/build-bootloaders" name="android_bootloader_build" remote="github" revision="android16-riscv" />
   <project path="bootloader/spacemit/pi-u-boot" name="pi-u-boot" remote="github" revision="android16-riscv" />
-  <project path="bootloader/spacemit/pi-opensbi" name="pi-opensbi" remote="baydroid" revision="v1.3-k1" />
+  <!-- upstream OpenSBI 1.8 + the RISE OP-TEE (MPXY/RPMI) work, fork of riscv-software-src/opensbi -->
+  <project path="bootloader/spacemit/opensbi" name="opensbi" remote="github" revision="android16-riscv" />
 
   <!-- ./build.sh at the top, and keep Soong out of the kernel/bootloader workspaces -->
   <extend-project name="android_device_spacemit_common">

@@ -74,6 +74,9 @@
   <project path="bootloader/spacemit/opensbi" name="opensbi" remote="github" revision="android16-riscv" />
   <!-- OP-TEE OS (plat-spacemit) on the RISE RISC-V OP-TEE work, fork of OP-TEE/optee_os -->
   <project path="bootloader/spacemit/optee_os" name="optee_os" remote="github" revision="android16-riscv" />
+  <!-- K3 (BPI-SM10): BayLibre's U-Boot 2026.07 K3 port with the SM10 board, and their K3 OpenSBI -->
+  <project path="bootloader/spacemit/k3-u-boot" name="pi-u-boot" remote="github" revision="android16-riscv-k3" />
+  <project path="bootloader/spacemit/k3-opensbi" name="pi-opensbi" remote="baydroid" revision="v1.8-k3" />
 
   <!-- ./build.sh at the top, and keep Soong out of the kernel/bootloader workspaces -->
   <extend-project name="android_device_spacemit_common">

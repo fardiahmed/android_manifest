@@ -72,6 +72,8 @@
   <project path="bootloader/spacemit/pi-u-boot" name="pi-u-boot" remote="github" revision="android16-riscv" />
   <!-- upstream OpenSBI 1.8 + the RISE OP-TEE (MPXY/RPMI) work, fork of riscv-software-src/opensbi -->
   <project path="bootloader/spacemit/opensbi" name="opensbi" remote="github" revision="android16-riscv" />
+  <!-- OP-TEE OS (plat-spacemit) on the RISE RISC-V OP-TEE work, fork of OP-TEE/optee_os -->
+  <project path="bootloader/spacemit/optee_os" name="optee_os" remote="github" revision="android16-riscv" />
 
   <!-- ./build.sh at the top, and keep Soong out of the kernel/bootloader workspaces -->
   <extend-project name="android_device_spacemit_common">

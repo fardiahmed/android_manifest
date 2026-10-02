@@ -6,6 +6,7 @@
 -->
 <manifest>
   <remote name="github" fetch="git@github.com:fardiahmed/" revision="android16-riscv" />
+  <remote name="optee" fetch="https://github.com/OP-TEE/" />
 
   <!-- AOSP projects with changes (forks named android_<path>) -->
   <remove-project name="platform/bootable/recovery" />
@@ -46,6 +47,10 @@
   <project path="vendor/spacemit/apps/MicTest" name="android_vendor_spacemit_apps_MicTest" remote="github" groups="device,pdk" />
   <project path="vendor/spacemit/apps/WfdSink" name="android_vendor_spacemit_apps_WfdSink" remote="github" groups="device,pdk" />
   <project path="vendor/spacemit/apps/ExoPlayer" name="android_vendor_spacemit_apps_ExoPlayer" remote="github" groups="device,pdk" />
+  <!-- KeyMint/Gatekeeper HALs and TAs for OP-TEE: BayLibre fork (keeps the BayLibre name) -->
+  <project path="vendor/spacemit/hardware/optee_keymint" name="android_hardware_baylibre_optee_keymint" remote="github" groups="device,pdk" />
+  <!-- libteec and tee-supplicant, upstream (configured by device/spacemit/common) -->
+  <project path="external/optee_client" name="optee_client" remote="optee" revision="refs/tags/4.8.0" groups="device,pdk" />
   <!-- src/ is a submodule on ggml-org/llama.cpp -->
   <project path="vendor/spacemit/ai/llama" name="android_vendor_spacemit_ai_llama" remote="github" sync-s="true" groups="device,pdk" />
 </manifest>

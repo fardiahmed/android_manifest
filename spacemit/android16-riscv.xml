@@ -37,6 +37,7 @@
        {k1,musepi-pro}/bootloader are built by ./build.sh -->
   <remove-project name="android_vendor_spacemit" />
   <project path="vendor/spacemit/k1" name="android_vendor_spacemit_k1" remote="github" groups="device,pdk" />
+  <project path="vendor/spacemit/k3" name="android_vendor_spacemit_k3" remote="github" groups="device,pdk" />
   <project path="vendor/spacemit/hardware/codec2" name="android_vendor_spacemit_hardware_codec2" remote="github" groups="device,pdk" />
   <project path="vendor/spacemit/hardware/hdmi" name="android_vendor_spacemit_hardware_hdmi" remote="github" groups="device,pdk" />
   <project path="vendor/spacemit/hardware/mesa" name="android_vendor_spacemit_hardware_mesa" remote="github" groups="device,pdk" />
